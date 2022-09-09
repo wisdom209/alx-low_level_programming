@@ -12,7 +12,6 @@
 int main(void)
 {
 	int start;
-	int end;
 
 	start = 97;
 	end = 123;
