@@ -23,7 +23,7 @@ int main(void)
 		startLower++;
 	}
 
-	while (startUpper <= 89)
+	while (startUpper <= 90)
 	{
 		putchar(startUpper);
 		startUpper++;
