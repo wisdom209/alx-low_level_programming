@@ -23,7 +23,7 @@ int main(void)
 		num++;
 	}
 
-	while (alphs <= 101)
+	while (alphs <= 102)
 	{
 		putchar(alphs);
 		alphs++;
