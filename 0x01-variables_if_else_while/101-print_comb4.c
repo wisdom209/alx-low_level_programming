@@ -28,8 +28,8 @@ int main(void)
 				putchar(innerMostTrack);
 				if (!(innerMostTrack == 57 && innerTrack == 56 && outerTrack == 55))
 				{
-					putchar(' ');
 					putchar(',');
+					putchar(' ');
 				}
 
 				innerMostTrack++;
