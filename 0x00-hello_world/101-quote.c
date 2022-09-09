@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-i
+
 /**
 * main - Entry point of programme
 * @void: This function has no parameters
