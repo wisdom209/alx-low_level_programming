@@ -14,7 +14,6 @@ int main(void)
 	int start;
 
 	start = 97;
-	end = 123;
 
 	while (start <= 122)
 	{
@@ -22,4 +21,6 @@ int main(void)
 		start++;
 	}
 	putchar('\n');
+
+	return (0);
 }
