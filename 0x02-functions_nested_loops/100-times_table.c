@@ -122,9 +122,17 @@ void print_mult_table(int prod, int iter, int end)
 {
 	if (iter == 0)
 	{
+		if (end == 0)
+		{
+			_putchar('0');
+			_putchar('\n');
+		}
+		else
+		{
 		_putchar('0');
 		_putchar(',');
 		_putchar(' ');
+		}
 	}
 	else
 	{
