@@ -21,7 +21,7 @@ int main(void)
 	for (i = 0; i < end; i++)
 	{
 		nextTerm = t1 + t2;
-		if (i == end)
+		if (i == end - 1)
 		{
 			printf("%lu", nextTerm);
 		}
