@@ -20,7 +20,7 @@ int main(void)
 
 	printf("%.0f, %.0f, ", t1, t2);
 
-	for (i = 3; i < end; i++)
+	for (i = 0; i < end; i++)
 	{
 
 		nextTerm = t1 + t2;
