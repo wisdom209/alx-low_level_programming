@@ -1,19 +1,18 @@
 #include "main.h"
+
+void print_three_digits(int prod, int iter, int end);
+void print_two_digits(int prod, int iter, int end);
+void print_one_digit(int prod, int iter, int end);
+void print_mult_table(int prod, int iter, int end);
 /**
  * print_times_table - print time tables to given num
- * @void: takes an integer
+ * @n: takes an integer
  *
  * Return: void
  */
 void print_times_table(int n)
 {
-
-	int i;
-	int j;
-	int product;
-	int firstDigit;
-	int secondDigit;
-	int thirdDigit;
+	int i, j, product;
 
 	if (n < 16 && n > -1)
 	{
@@ -22,62 +21,124 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				product = i * j;
-
-				if (j == 0)
-				{
-					_putchar('0');
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
-				else
-				{
-
-					if (product >= 100)
-					{
-						firstDigit = product / 100;
-						secondDigit = (product % 100) / 10;
-						thirdDigit = (product % 10);
-						_putchar(firstDigit + '0');
-						_putchar(secondDigit + '0');
-						_putchar(thirdDigit + '0');
-						if (j != n)
-						{
-							_putchar(',');
-							_putchar(' ');
-						}
-					}
-					else if (product > 9 && product < 100)
-					{
-						secondDigit = product / 10;
-						thirdDigit = (product % 10);
-
-						_putchar(' ');
-						_putchar(secondDigit + '0');
-						_putchar(thirdDigit + '0');
-						if (j != n)
-						{
-							_putchar(',');
-							_putchar(' ');
-						}
-					}
-					else
-					{
-
-						thirdDigit = (product % 10);
-
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(thirdDigit + '0');
-						if (j != n)
-						{
-							_putchar(',');
-							_putchar(' ');
-						}
-					}
-				}
+				print_mult_table(product, j, n);
 			}
-			_putchar('\n');
+		}
+	}
+}
+
+/**
+ * print_three_digits - print a three digit num
+ * @prod: product of two numbers
+ * @iter: an iterator
+ * @end: end point of iterator
+ *
+ * Return: void
+ */
+void print_three_digits(int prod, int iter, int end)
+{
+	int a, b, c;
+
+	a = prod / 100;
+	b = (prod % 100) / 10;
+	c = (prod % 10);
+	_putchar(a + '0');
+	_putchar(b + '0');
+	_putchar(c + '0');
+	if (iter != end)
+	{
+		_putchar(',');
+		_putchar(' ');
+	}
+	else
+	{
+		_putchar('\n');
+	}
+}
+
+/**
+ * print_two_digits - print a two digit num
+ * @prod: product of two numbers
+ * @iter: an iterator
+ * @end: end point of iterator
+ *
+ * Return: void
+ */
+void print_two_digits(int prod, int iter, int end)
+{
+	int secondDigit;
+	int thirdDigit;
+
+	secondDigit = prod / 10;
+	thirdDigit = (prod % 10);
+	_putchar(' ');
+	_putchar(secondDigit + '0');
+	_putchar(thirdDigit + '0');
+	if (iter != end)
+	{
+		_putchar(',');
+		_putchar(' ');
+	}
+	else
+	{
+		_putchar('\n');
+	}
+}
+
+/**
+ * print_one_digit - print a one digit num
+ * @prod: product of two numbers
+ * @iter: an iterator
+ * @end: end point of iterator
+ *
+ * Return: void
+ */
+void print_one_digit(int prod, int iter, int end)
+{
+	int thirdDigit;
+
+	thirdDigit = (prod % 10);
+	_putchar(' ');
+	_putchar(' ');
+	_putchar(thirdDigit + '0');
+	if (iter != end)
+	{
+		_putchar(',');
+		_putchar(' ');
+	}
+	else
+	{
+		_putchar('\n');
+	}
+}
+
+/**
+ * print_mult_table - prints times table
+ * @prod: product
+ * @iter: an iterator
+ * @end: end point of iter
+ */
+void print_mult_table(int prod, int iter, int end)
+{
+	if (iter == 0)
+	{
+		_putchar('0');
+		_putchar(',');
+		_putchar(' ');
+	}
+	else
+	{
+		if (prod >= 100)
+		{
+			print_three_digits(prod, iter, end);
+		}
+		else if (prod > 9 && prod < 100)
+		{
+			print_two_digits(prod, iter, end);
+		}
+		else
+		{
+			print_one_digit(prod, iter, end);
 		}
 	}
 }
