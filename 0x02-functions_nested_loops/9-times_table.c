@@ -32,19 +32,18 @@ void times_table(void)
 			else
 			{
 				productUnit = product % 10;
-				productTens = product/10;
+				productTens = product / 10;
 
 				_putchar(productTens + '0');
 				_putchar(productUnit + '0');
 			}
-
-			if(j != 9){
+			if (j != 9)
+			{
 				_putchar(',');
 				_putchar(' ');
-			}else
-
+			}
+			else
 			_putchar('\n');
-
 		}
 	}
 }
