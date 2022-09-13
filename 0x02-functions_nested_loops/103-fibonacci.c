@@ -10,9 +10,9 @@ int main(void)
 {
 	long double t1;
 	long double t2;
-	long long int nextTerm;
+	long nextTerm;
 	long double max;
-	long double sum;
+	int sum;
 
 	t1 = 0;
 	t2 = 1;
@@ -31,7 +31,7 @@ int main(void)
 		nextTerm = t1 + t2;
 	}
 
-	printf("%.0Lf\n", sum + 2);
+	printf("%d\n", sum + 2);
 
 	return (0);
 }
