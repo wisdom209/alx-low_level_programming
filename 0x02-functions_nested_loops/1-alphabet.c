@@ -1,4 +1,4 @@
-#include "_putchar.c"
+#include "main.h"
 /**
  * print_alphabet - prints a_z
  * @void: takes no args
