@@ -1,3 +1,4 @@
+#include "_putchar.c"
 /**
  * print_alphabet - prints a_z
  * @void: takes no args
@@ -6,8 +7,9 @@
  */
 
 void print_alphabet(void)
-{
-	for (int i = 97; i < 123; i++)
+{	
+	int i = 97;
+	for (i = 97; i < 123; i++)
 	{
 		_putchar(i);
 	}
