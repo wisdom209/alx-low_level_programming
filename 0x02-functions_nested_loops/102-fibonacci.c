@@ -16,8 +16,6 @@ int main(void)
 	t1 = 0;
 	t2 = 1;
 
-	printf("%lu, ", t2);
-
 	for (i = 0; i < 49; i++)
 	{
 		nextTerm = t1 + t2;
