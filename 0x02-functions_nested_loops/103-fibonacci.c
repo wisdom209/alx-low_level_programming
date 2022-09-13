@@ -11,7 +11,8 @@ int main(void)
 	long double t1;
 	long double t2;
 	long nextTerm;
-	long double max;
+	long max;
+
 	int sum;
 
 	t1 = 0;
@@ -31,7 +32,7 @@ int main(void)
 		nextTerm = t1 + t2;
 	}
 
-	printf("%d\n", sum + 2);
+	printf("%d\n", sum);
 
 	return (0);
 }
