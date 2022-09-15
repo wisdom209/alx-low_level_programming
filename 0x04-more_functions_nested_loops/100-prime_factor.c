@@ -10,7 +10,7 @@ int main(void)
 
 	unsigned int max, i, j, k, maxPrime;
 
-	max = 100;
+	max = 612852475143;
 	maxPrime = 0;
 
 	for (i = 2; i <= max; i++)
