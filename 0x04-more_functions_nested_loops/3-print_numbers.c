@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_numbers - prints 0 to 9 then newline
  * @void: takes no args
