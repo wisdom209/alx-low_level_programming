@@ -21,7 +21,8 @@ int _atoi(char *s)
 		if (s[i] >= 48 && s[i] <= 57)
 		{
 			sum = sum * 10 + (s[i] - 48);
-
+			if (i == c - 1)
+				break;
 			if (s[i + 1] < 48 || s[i + 1] > 57)
 				break;
 		}
@@ -29,6 +30,8 @@ int _atoi(char *s)
 
 	while (s[j] <= 48 || s[j] >= 57)
 	{
+		if (j == c - 1)
+			break;
 		if (s[j] == '-')
 			numNeg++;
 		if (s[j] == '+')
