@@ -1,5 +1,5 @@
 /**
- * _strcopy - copies a string
+ * _strcpy - copies a string
  * @dest: where to copy to
  * @src: where to copy from
  *
@@ -20,6 +20,7 @@ char *_strcpy(char *dest, char *src)
 	{
 		dest[i] = src[i];
 	}
+	dest[c] = '\0';
 
-	return dest;
+	return (dest);
 }
