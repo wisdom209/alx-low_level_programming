@@ -1,3 +1,11 @@
+#include "main.h"
+
+/**
+ * print_rev - print string reverse
+ * @s: string variable
+ *
+ * Return: nothing
+ */
 void print_rev(char *s)
 {
 	int c;
