@@ -6,7 +6,7 @@
  */
 int _atoi(char *s)
 {
-	int c, i, j, numPos, numNeg, sign, sum;
+	int c, i, j, sum;
 
 	c = 0;
 	sum = 0;
@@ -28,18 +28,12 @@ int _atoi(char *s)
 		}
 	}
 
-	while (s[j] <= 48 || s[j] >= 57)
+	while ((s[j] <= 48 || s[j] >= 57) && s[j] != '\0')
 	{
 		if (s[j] == '-')
-			numNeg++;
-		if (s[j] == '+')
-			numPos++;
+			sum = sum * -1;
 		j++;
 	}
-	sign = numPos - numNeg;
-
-	if (sign < 0)
-		return (-sum);
 
 	return (sum);
 }
