@@ -1,3 +1,5 @@
+#include "putchar.c"
+
 /**
  * _puts - prints out a string and newline
  * @str: string to print out
