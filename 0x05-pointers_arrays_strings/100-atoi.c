@@ -1,5 +1,3 @@
-int convertToInt(char *temp, int a, int sign);
-
 /**
  * _atoi - converts string to integer
  * @s: string variable to convert
@@ -8,11 +6,10 @@ int convertToInt(char *temp, int a, int sign);
  */
 int _atoi(char *s)
 {
-	int c, i, a, j, numPos, numNeg, sign, answer;
-	char temp[50];
+	int c, i, j, numPos, numNeg, sign, sum;
 
 	c = 0;
-	a = 0;
+	sum = 0;
 
 	while (s[c] != 0)
 	{
@@ -23,8 +20,7 @@ int _atoi(char *s)
 	{
 		if (s[i] >= 48 && s[i] <= 57)
 		{
-			temp[a] = s[i];
-			a++;
+			sum = sum * 10 + (s[i] - 48);
 
 			if (s[i + 1] < 48 || s[i + 1] > 57)
 				break;
@@ -37,39 +33,13 @@ int _atoi(char *s)
 			numNeg++;
 		if (s[j] == '+')
 			numPos++;
-
 		j++;
 	}
 	sign = numPos - numNeg;
-
-	answer = convertToInt(temp, a, sign);
-
-	return (answer);
-}
-
-/**
- * convertToInt - converts String to Integer
- * @temp: integer char arr
- * @a: size of char arr
- * @sign: determines if integer is negative or positive
- *
- * Return: returns an integer conversion
- */
-int convertToInt(char *temp, int a, int sign)
-{
-	int i, sum;
-
-	i = 0;
-	sum = 0;
-
-	while (i < a)
-	{
-		sum = sum * 10 + (temp[i] - 48);
-		i++;
-	}
 
 	if (sign < 0)
 		return (-sum);
 
 	return (sum);
 }
+
