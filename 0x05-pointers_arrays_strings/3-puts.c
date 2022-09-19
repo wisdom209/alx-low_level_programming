@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _puts - prints out a string and newline
  * @str: string to print out
@@ -14,6 +13,7 @@ void _puts(char *str)
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
+		i++;
 	}
 
 	_putchar('\n');
