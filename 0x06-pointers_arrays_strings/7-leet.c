@@ -7,7 +7,7 @@ int findStringSize(char *s);
  */
 char *leet(char *s)
 {
-	int i, j = 0;
+	int i, j, k = 0;
 	char ref[][4] = {{'a', 'A', '4'}, {'e', 'E', '3'}, {'o', 'O', '0'},
 		{'t', 'T', '7'}, {'l', 'L', '1'}};
 
@@ -17,7 +17,9 @@ char *leet(char *s)
 		{
 			if (s[i] == ref[j][0] || s[i] == ref[j][1])
 			{
-				s[i] = ref[j][2];
+				k = j;
+
+				s[i] = ref[k][2];
 			}
 		}
 		i++;
