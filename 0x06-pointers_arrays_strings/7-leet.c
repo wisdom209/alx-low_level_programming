@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * leet - 1377 encryption of strings
  * @s: string to encode
