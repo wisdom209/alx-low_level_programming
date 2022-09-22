@@ -7,43 +7,23 @@ int findStringSize(char *s);
  */
 char *leet(char *s)
 {
-	int sCount = findStringSize(s);
-	int i, j, k;
+	int i, j = 0;
+	char ref[][4] = {{'a', 'A', '4'}, {'e', 'E', '3'}, {'o', 'O', '0'},
+		{'t', 'T', '7'}, {'l', 'L', '1'}};
 
-	char ref[5][4] = {{'a', 'A', '4', '\0'},
-		{'e', 'E', '3', '\0'}, {'o', 'O', '0', '\0'},
-		{'t', 'T', '7', '\0'}, {'l', 'L', '1', '\0'}};
-
-	for (i = 0; i < sCount; i++)
+	while (s[i] != '\0')
 	{
 		for (j = 0; j < 5; j++)
 		{
 			if (s[i] == ref[j][0] || s[i] == ref[j][1])
 			{
-				k = j;
-
-				s[i] = ref[k][2];
+				s[i] = ref[j][2];
 				break;
 			}
 		}
+		i++;
 	}
 
 	return (s);
 }
 
-/**
- * findStringSize - gets string size
- * @s: string param
- *
- * Return: string size
- */
-int findStringSize(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
