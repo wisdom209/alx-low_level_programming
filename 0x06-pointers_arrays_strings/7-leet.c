@@ -18,7 +18,6 @@ char *leet(char *s)
 			if (s[i] == ref[j][0] || s[i] == ref[j][1])
 			{
 				s[i] = ref[j][2];
-				break;
 			}
 		}
 		i++;
