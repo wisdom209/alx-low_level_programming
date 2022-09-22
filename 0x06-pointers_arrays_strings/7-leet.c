@@ -7,21 +7,24 @@ int findStringSize(char *s);
  */
 char *leet(char *s)
 {
-	int i, j, k = 0;
-	char ref[][4] = {{'a', 'A', '4'}, {'e', 'E', '3'}, {'o', 'O', '0'},
-		{'t', 'T', '7'}, {'l', 'L', '1'}};
+	int i, j = 0;
+	char ref[] = "aeotlAEOTL";
+	char dest[] = "4307143071";
 
 	while (s[i] != '\0')
 	{
-		for (j = 0; j < 5; j++)
-		{
-			if (s[i] == ref[j][0] || s[i] == ref[j][1])
-			{
-				k = j;
+		j = 0;
 
-				s[i] = ref[k][2];
+		while (ref[j] != '\0')
+		{
+			if (s[i] == ref[j])
+			{
+
+				s[i] = dest[j];
 			}
+			j++;
 		}
+
 		i++;
 	}
 
