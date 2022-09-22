@@ -9,13 +9,13 @@ int findStringSize(char *s);
 char *cap_string(char *s)
 {
 	int i, j;
-	char sp[] = {';', ',', ' ', '\n', '.', '!', '?', '"',
-		'(', ')', '{', '}', '\t'};
+	char sp[] = {';', ',', ' ', '\n', '.', '!', '?',
+		'"', '(', ')', '{', '}', '\t'};
 
 	int spSize = sizeof(sp) / sizeof(char);
 	int sizeS = findStringSize(s);
 
-		if (s[0] >= 'a' && s[0] <= 'z')
+	if (s[0] >= 'a' && s[0] <= 'z')
 	{
 		s[0] = 65 + s[0] - 'a';
 	}
@@ -24,22 +24,13 @@ char *cap_string(char *s)
 	{
 		for (j = 0; j < spSize; j++)
 		{
-			if (s[i] == sp[j])
+			if (s[i - 1] == sp[j] && (s[i] >= 97 && s[i] <= 122))
 			{
-				int c = i + 1;
-
-				if (c < sizeS)
-				{
-					while (!((s[c] >= 'a' && s[c] <= 'z') || (s[c] >= 'A' && s[c] <= 'Z')))
-					{
-						c++;
-					}
-					if (s[c] > 90)
-						s[c] = 65 + s[c] - 'a';
-				}
+				s[i] = 65 + s[i] - 'a';
 			}
 		}
 	}
+
 	return (s);
 }
 
