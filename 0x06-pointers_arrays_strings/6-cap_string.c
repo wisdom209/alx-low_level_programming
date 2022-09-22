@@ -15,6 +15,11 @@ char *cap_string(char *s)
 	int spSize = sizeof(sp) / sizeof(char);
 	int sizeS = findStringSize(s);
 
+		if (s[0] >= 'a' && s[0] <= 'z')
+	{
+		s[0] = 65 + s[0] - 'a';
+	}
+
 	for (i = 0; i < sizeS; i++)
 	{
 		for (j = 0; j < spSize; j++)
