@@ -1,4 +1,3 @@
-int findStringSize(char *s);
 /**
  * leet - 1377 encryption of strings
  * @s: string to encode
