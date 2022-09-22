@@ -10,7 +10,7 @@ char *cap_string(char *s)
 {
 	int i, j;
 	char sp[] = {';', ' ', '\n', '.', '!', '?', '"', '(', ')',
-		'{', '}', ',', '\t', '\0'};
+		'{', '}', ',', '\t'};
 
 	int spSize = sizeof(sp) / sizeof(char);
 	int sizeS = findStringSize(s);
