@@ -5,10 +5,10 @@
  *
  * Return: returns nothing
  */
-int findLen(char *s)
+int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
-		return 1;
+		return (1);
 	else
-		return *s + findLen(s + 1);
+		return (*s + findLen(s + 1));
 }
