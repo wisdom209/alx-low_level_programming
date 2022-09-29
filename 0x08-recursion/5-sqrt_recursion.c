@@ -24,6 +24,8 @@ int _sqrt_recursion(int n)
  */
 int squareroot(int n, int y)
 {
+	if (n == 1)
+		return (1);
 	if (y > n / 2)
 		return (-1);
 	if (y * y == n)
