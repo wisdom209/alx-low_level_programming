@@ -12,7 +12,7 @@ char *argv[] __attribute__((__unused__)))
 {
 	int i = 0;
 
-	for (i = 1; i < argc; i++)
+	for (i = 0; i < argc; i++)
 	{
 		printf("%s\n", argv[i]);
 	}
