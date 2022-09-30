@@ -7,7 +7,7 @@
  *
  * Return: 0 if successful
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__((__unused__)), char *argv[])
 {
 	char *filename = argv[0];
 
