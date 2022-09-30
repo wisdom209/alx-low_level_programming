@@ -7,7 +7,8 @@
  *
  * Return: 0 if successful
  */
-int main(int argc, char *argv[] __attribute__((__unused__)))
+int main(int argc __attribute__((__unused__)),
+char *argv[] __attribute__((__unused__)))
 {
 	int i = 0;
 
