@@ -1,4 +1,5 @@
 #include "main.h"
+#include "string.h"
 
 int driver_pal(char *str, int s, int e);
 /**
@@ -11,11 +12,7 @@ int is_palindrome(char *s)
 {
 	int slen = 0, isPal = 0;
 
-	while (s[slen] != '\0')
-	{
-		slen++;
-	}
-
+	slen = strlen(slen);
 	isPal = driver_pal(s, 0, slen - 1);
 
 	return (isPal);
