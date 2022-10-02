@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 {
 	int slen = 0, isPal = 0;
 
-	slen = strlen(slen);
+	slen = strlen(s);
 	isPal = driver_pal(s, 0, slen - 1);
 
 	return (isPal);
