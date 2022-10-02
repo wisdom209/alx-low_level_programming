@@ -28,7 +28,7 @@ int is_palindrome(char *s)
  */
 int driver_pal(char *str, int s, int e)
 {
-	if (*(str + s) == *(str + e))
+	if (s == e)
 		return (1);
 	if (*(str + s) != *(str + e))
 		return (0);
