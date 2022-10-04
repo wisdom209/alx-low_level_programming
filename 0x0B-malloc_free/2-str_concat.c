@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	s1len = _strlen(s1);
 	s2len = _strlen(s2);
 	newSize = s1len + s2len;
-	s3 = (char *)malloc(sizeof(newSize) + 8);
+	s3 = (char *)malloc(newsize + 1);
 
 	if (s3 == NULL)
 		return (NULL);
