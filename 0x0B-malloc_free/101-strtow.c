@@ -16,14 +16,14 @@ char **strtow(char *str)
 	char *str2;
 
 	stringLen = _strlen(0, '\0', str);
-	arr = (char **)malloc(sizeof(char) * stringLen + 1);
+	arr = (char **)malloc(sizeof(char) * stringLen);
 	if (arr == NULL)
 		return (NULL);
 	str2 = (char *)malloc(sizeof(char) * stringLen + 1);
 	if (str2 == NULL)
 		return (NULL);
 	expandString(stringLen, str2, str);
-	str2[stringLen + 2] = '\0';
+	/*  str2[stringLen + 1] = '\0'; */
 
 	for (i = 0; i < stringLen + 1; i++)
 	{
@@ -49,7 +49,8 @@ char **strtow(char *str)
 			wordCount++;
 		}
 	}
-	if (str == NULL || wordCount < 1)
+	free(str2);
+	if(str == NULL || wordCount < 1)
 		return (NULL);
 	arr[wordCount] = NULL;
 	return (arr);
@@ -57,7 +58,6 @@ char **strtow(char *str)
 
 /**
  * _strlen - gets string length
- * @startI: start index of string
  * @end: end char delimiter
  * @str: string to get length
  *
@@ -83,7 +83,6 @@ int _strlen(int startI, char end, char *str)
 void expandString(int stringLen, char *str2, char *str1)
 {
 	int i = 0;
-
 	for (i = 0; i < stringLen + 1; i++)
 	{
 		if (i == 0)
