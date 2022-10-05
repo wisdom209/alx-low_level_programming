@@ -16,7 +16,7 @@ char **strtow(char *str)
 	char *str2;
 
 	stringLen = _strlen(0, '\0', str);
-	arr = (char **)malloc(sizeof(char) * stringLen + 2);
+	arr = (char **)malloc(sizeof(char) * stringLen + 1);
 	if (arr == NULL)
 		return (NULL);
 	str2 = (char *)malloc(sizeof(char) * stringLen + 2);
