@@ -19,7 +19,7 @@ char **strtow(char *str)
 	arr = (char **)malloc(sizeof(char) * stringLen + 1);
 	if (arr == NULL)
 		return (NULL);
-	str2 = (char *)malloc(sizeof(char) * stringLen + 2);
+	str2 = (char *)malloc(sizeof(char) * stringLen + 1);
 	if (str2 == NULL)
 		return (NULL);
 	expandString(stringLen, str2, str);
