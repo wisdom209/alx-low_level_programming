@@ -49,7 +49,7 @@ char **strtow(char *str)
 			wordCount++;
 		}
 	}
-	free(str2);
+
 	if (str == NULL || wordCount < 1)
 		return (NULL);
 	arr[wordCount] = NULL;
