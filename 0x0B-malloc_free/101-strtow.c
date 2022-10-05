@@ -34,7 +34,7 @@ char **strtow(char *str)
 			counter = countChars(i, counter, str2);
 			counter = counter - initial;
 			a = wordCount;
-			arr[a] = (char *)malloc(sizeof(char) * counter + 1);
+			arr[a] = (char *)malloc(sizeof(char) * counter);
 			if (arr[a] == NULL)
 				return (NULL);
 			iter = i;
