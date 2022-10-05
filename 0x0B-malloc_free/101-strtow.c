@@ -23,7 +23,7 @@ char **strtow(char *str)
 	if (str2 == NULL)
 		return (NULL);
 	expandString(stringLen, str2, str);
-	/*  str2[stringLen + 1] = '\0'; */
+	 str2[stringLen + 1] = '\0';
 
 	for (i = 0; i < stringLen + 1; i++)
 	{
@@ -50,7 +50,7 @@ char **strtow(char *str)
 		}
 	}
 	free(str2);
-	if(str == NULL || wordCount < 1)
+	if (str == NULL || wordCount < 1)
 		return (NULL);
 	arr[wordCount] = NULL;
 	return (arr);
@@ -60,6 +60,7 @@ char **strtow(char *str)
  * _strlen - gets string length
  * @end: end char delimiter
  * @str: string to get length
+ * @startI: start index
  *
  * Return: length of string
  */
@@ -83,6 +84,7 @@ int _strlen(int startI, char end, char *str)
 void expandString(int stringLen, char *str2, char *str1)
 {
 	int i = 0;
+
 	for (i = 0; i < stringLen + 1; i++)
 	{
 		if (i == 0)
