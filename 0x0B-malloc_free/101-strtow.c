@@ -16,10 +16,10 @@ char **strtow(char *str)
 	char *str2;
 
 	stringLen = _strlen(0, '\0', str);
-	arr = (char **)malloc(sizeof(char) * stringLen + 1);
+	arr = (char **)malloc(sizeof(char) * stringLen);
 	if (arr == NULL)
 		return (NULL);
-	str2 = (char *)malloc(sizeof(char) * stringLen + 2);
+	str2 = (char *)malloc(sizeof(char) * stringLen);
 	if (str2 == NULL)
 		return (NULL);
 	expandString(stringLen, str2, str);
@@ -34,7 +34,7 @@ char **strtow(char *str)
 			counter = countChars(i, counter, str2);
 			counter = counter - initial;
 			a = wordCount;
-			arr[a] = (char *)malloc(sizeof(char) * counter);
+			arr[a] = (char *)malloc(sizeof(char) * counter + 1);
 			if (arr[a] == NULL)
 				return (NULL);
 			iter = i;
