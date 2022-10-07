@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (!s1)
 	{
-		concatString(s3, "", s2, s2len);
+		concatString(s3, "", s2, num);
 		return (s3);
 	}
 	if (!s2)
