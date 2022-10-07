@@ -13,18 +13,17 @@ void concatString(char *concatStr, char *dest, char *src, int bytes);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s3;
-
-	int s1len = _strlen(s1);
-	int s2len = _strlen(s2);
+	int s1len = 0, s2len = 0;
 	int num = n;
-
-	s3 = malloc(sizeof(char) * s1len + n  + 1);
-
-	if (!s3)
-		return (NULL);
 
 	if (num < 0)
 		return (NULL);
+
+	s1len = _strlen(s1);
+
+	s2len = _strlen(s2);
+
+	s3 = malloc(sizeof(char) * s1len + n + 1);
 
 	if (!s3)
 		return (NULL);
