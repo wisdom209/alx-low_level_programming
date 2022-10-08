@@ -73,7 +73,10 @@ void print_results(int slen, int result[])
 				printf("%d", result[j]);
 			break;
 		}
+		if (i == 0 && result[i] == 0)
+			printf("0");
 	}
+
 }
 
 /**
