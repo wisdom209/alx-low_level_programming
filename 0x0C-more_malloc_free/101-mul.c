@@ -51,6 +51,8 @@ int main(int argc, char *argv[])
 
 	print_results(len1 + len2, result);
 	printf("\n");
+
+	free(result);
 	return (0);
 }
 
@@ -76,7 +78,6 @@ void print_results(int slen, int result[])
 		if (i == 0 && result[i] == 0)
 			printf("0");
 	}
-
 }
 
 /**
