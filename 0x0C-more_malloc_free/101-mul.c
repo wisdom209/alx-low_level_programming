@@ -13,7 +13,8 @@ int check_digits(char *s);
 int main(int argc, char *argv[])
 {
 	char *num1 = argv[1], *num2 = argv[2];
-	int i_n1, product, n2, i, j, len1 = 0, len2 = 0;
+	int i_n1 = 0, product = 0, n2 = 0, i = 0, j = 0;
+	int len1 = 0, len2 = 0;
 	int *result;
 
 	if (argc != 3 || check_digits(num1) < 0 || check_digits(num2) < 0)
