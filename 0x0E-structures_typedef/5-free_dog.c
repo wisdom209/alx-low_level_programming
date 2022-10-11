@@ -1,4 +1,4 @@
-#include "main.h"
+#include "dog.h"
 /**
  * free_dog - free space occupied by dog
  * @d: dog instance
