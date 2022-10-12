@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 		strcmp(op, "%") == 0)
 	{
 		int a = (get_op_func(op))(num1, num2);
+
 		printf("%d\n", a);
 		return (0);
 	}
