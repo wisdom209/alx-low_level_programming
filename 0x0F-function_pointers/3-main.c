@@ -12,8 +12,8 @@
 int main(int argc, char *argv[])
 {
 	char *op = NULL;
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[3]);
+	int num1 = 0;
+	int num2 = 0;
 
 	if (argc != 4)
 	{
@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 	op = argv[2];
 
 	if ((strcmp(op, "/") == 0 && num2 == 0) ||
@@ -35,7 +37,6 @@ int main(int argc, char *argv[])
 		strcmp(op, "%") == 0)
 	{
 		int a = (get_op_func(op))(num1, num2);
-
 		printf("%d\n", a);
 		return (0);
 	}
