@@ -10,4 +10,4 @@ main:
         ret
 
 section .data
-        msg     db      'Hello, Holberton', 16, 10, 0
+        msg     db      'Hello, Holberton', 16, 10
