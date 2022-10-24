@@ -7,7 +7,7 @@
  * @n: data at index
  *
  * Return: Node at index
-*/
+ */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *temp = *head;
@@ -23,6 +23,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		size++;
 	}
 
+	newnode->n = n;
+
 	if (idx > size - 1)
 		return (NULL);
 
@@ -32,15 +34,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		(*head) = newnode;
 		return (newnode);
 	}
-
-	temp = *head;
-
-	for (i = 0; i < idx; i++)
+	if (idx == size - 1)
 	{
-		temp = temp->next;
+		temp->next = newnode;
+		return (newnode);
 	}
 
-	newnode->n = n;
+		temp = *head;
+
+	for (i = 0; i < idx; i++)
+		temp = temp->next;
 
 	newnode->next = temp->next;
 	temp->next = newnode;
