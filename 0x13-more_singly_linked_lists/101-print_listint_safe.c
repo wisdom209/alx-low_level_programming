@@ -1,74 +1,37 @@
 #include "lists.h"
-#include <stdint.h>
-
-int print_listformat(const listint_t *head);
 
 /**
  * print_listint_safe - prints lists with loops
  * @head: pointer to first node
  *
  * Return: size of list
-*/
+ */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *temp = head, *slow = head, *fast = head;
-	int i = 0;
-
-	if (head == NULL)
-		exit(98);
-
-	while (slow && fast && fast->next)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
-
-		if (slow == fast)
-		{
-			slow = head;
-
-			while (slow->next != fast->next)
-			{
-				slow = slow->next;
-				fast = fast->next;
-			}
-			while (temp != NULL)
-			{
-				if (temp == fast)
-				{
-					printf("[%p] %d\n", (void *)temp, temp->n);
-					i++;
-					printf("-> [%p] %d\n", (void *)fast->next, fast->next->n);
-					return (i);
-				}
-				i++;
-				printf("[%p] %d\n", (void *)temp, temp->n);
-				temp = temp->next;
-			}
-
-		}
-	}
-	i = print_listformat(head);
-	return (i);
-}
-
-/**
- * print_listformat - prints formatted list with address
- * @head: pointer to head node
- *
- * Return: no of elements in list
-*/
-int print_listformat(const listint_t *head)
-{
+	listint_t *visited = malloc(sizeof(listint_t));
+	
+	
 	const listint_t *temp = head;
+	listint_t *temp2 = (listint_t *)head;
 	int i = 0;
+
+
+	if(visited == NULL || head == NULL)
+		exit (98);
 
 	while (temp != NULL)
 	{
 		i++;
+		if (temp->next == visited)
+		{
+			printf("-> [%p] %d\n", (void *)temp, temp->n);
+			break;
+		}
+		temp2 = (listint_t *)temp;
 		printf("[%p] %d\n", (void *)temp, temp->n);
 		temp = temp->next;
+		temp2->next = (listint_t *)visited;
 	}
-
 	return (i);
 }
 
