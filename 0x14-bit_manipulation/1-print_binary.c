@@ -10,7 +10,7 @@ void print_binary(unsigned long int n)
 {
 	int i = 0, j = 0, flag_first_zero = 0;
 
-	for (i = 32; i >= 0; i--)
+	for (i = 63; i >= 0; i--)
 	{
 		j = n >> i;
 
