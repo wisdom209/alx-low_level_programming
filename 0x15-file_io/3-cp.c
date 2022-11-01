@@ -1,6 +1,6 @@
 #include "main.h"
 
-void write_error_check(int writtenBytes, char *args[]);
+void write_error_check(int writtenBytes, char *args[], int fd_from);
 void read_error_check(int readBytes, char *args[]);
 void close_error_check(int fd);
 
@@ -22,7 +22,7 @@ int main(int argc, char **args)
 		exit(97);
 	}
 
-	fd_from = open(args[1], O_RDWR);
+	fd_from = open(args[1], O_RDONLY);
 
 	if (fd_from < 0)
 	{
@@ -30,7 +30,7 @@ int main(int argc, char **args)
 		exit(98);
 	}
 
-	fd_to = open(args[2], O_RDWR | O_CREAT | O_TRUNC, 00664);
+	fd_to = open(args[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
 
 	if (fd_to < 0)
 	{
@@ -40,7 +40,7 @@ int main(int argc, char **args)
 	while ((readBytes = read(fd_from, buffer, 1024)) > 0)
 	{
 		writtenBytes = write(fd_to, buffer, readBytes);
-		write_error_check(writtenBytes, args);
+		write_error_check(writtenBytes, args, fd_from);
 	}
 
 	read_error_check(readBytes, args);
@@ -57,11 +57,12 @@ int main(int argc, char **args)
  *
  * Return: void
 */
-void write_error_check(int writtenbytes, char *args[])
+void write_error_check(int writtenbytes, char *args[], int fd_from)
 {
 	if (writtenbytes < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", args[2]);
+		close_error_check(fd_from);
 		exit(99);
 	}
 }
