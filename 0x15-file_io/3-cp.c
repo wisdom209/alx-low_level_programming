@@ -54,6 +54,7 @@ int main(int argc, char **args)
  * write_error_check - checks write errors
  * @writtenbytes: bytes written
  * @args: command line args
+ * @fd_from: file descriptor for file to copy from
  *
  * Return: void
 */
