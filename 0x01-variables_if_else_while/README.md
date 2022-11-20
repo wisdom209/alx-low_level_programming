@@ -25,8 +25,8 @@ followed by a new line
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 0-positive_or_negative.c
     
 ## 1. The last digit
@@ -59,8 +59,8 @@ followed by a new line
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 1-last_digit.c
     
 ## 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
@@ -75,8 +75,8 @@ You can only use putchar twice in your code
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 2-print_alphabet.c
     
 ## 3. alphABET
@@ -91,8 +91,8 @@ You can only use putchar three times in your code
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 3-print_alphabets.c
     
 ## 4. When I was having that alphabet soup, I never thought that it would pay off
@@ -109,8 +109,8 @@ You can only use putchar twice in your code
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 4-print_alphabt.c
     
 ## 5. Numbers
@@ -121,8 +121,8 @@ All your code should be in the main function
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 5-print_numbers.c
     
 ## 6. Numberz
@@ -139,8 +139,8 @@ All your code should be in the main function
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 6-print_numberz.c
     
 ## 7. Smile in the mirror
@@ -155,8 +155,8 @@ You can only use putchar twice in your code
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 7-print_tebahpla.c
     
 ## 8. Hexadecimal
@@ -171,8 +171,8 @@ You can only use putchar three times in your code
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 8-print_base16.c
     
 ## 9. Patience, persistence and perspiration make an unbeatable combination for success
@@ -193,8 +193,8 @@ You are not allowed to use any variable of type char
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 9-print_comb.c
     
 ## 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
@@ -220,8 +220,8 @@ All your code should be in the main function
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 100-print_comb3.c
     
 ## 11. The success combination in business is: Do what you do better... and: do more of what you do...
@@ -249,8 +249,8 @@ All your code should be in the main function
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 101-print_comb4.c
     
 ## 12. Software is eating the World
@@ -280,6 +280,6 @@ All your code should be in the main function
 
 ## Repo:
 
-* GitHub repository: alx-system_engineering-devops
-* Directory: 0x03-shell_variables_expansions
+* GitHub repository: alx-low_level_programming
+* Directory: 0x01-variables_if_else_while
 * File: 102-print_comb5.c
