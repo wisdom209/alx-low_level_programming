@@ -1,80 +1,101 @@
 #include "main.h"
-#define MAXSIZE 1024
+
+void write_error_check(int writtenBytes, char *args[], int fd_from);
+void read_error_check(int readBytes, char *args[]);
+void close_error_check(int fd);
 
 /**
- * __exit - prints error messages and exits with exit number
- * @error: either the exit number or file descriptor
- * @str: name of either file_in or file_out
- * @fd: file descriptor
+ * main - entry
+ * @argc: arg count
+ * @args: command line args
  *
- * Return: 0 on success
+ * Return: int
 */
-
-int __exit(int error, char *str, int fd)
+int main(int argc, char **args)
 {
-	switch (error)
-	{
-		case 97:
-			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-			exit(error);
-		case 98:
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", str);
-			exit(error);
-		case 99:
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", str);
-			exit(error);
-		case 100:
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-			exit(error);
-		default:
-			return (0);
-	}
-}
-
-/**
- * main - create a copy of file
- *
- * @argc: argument counter
- * @argv: argument vector
- *
- * Return: 0 for success.
-*/
-
-int main(int argc, char *argv[])
-{
-	int file_in, file_out, close_in;
-	int close_out, r_stat, w_stat;
-	char buffer[MAXSIZE];
+	int fd_to = 0, fd_from = 0, writtenBytes = 0, readBytes = 0;
+	char buffer[1024];
 
 	if (argc != 3)
-		__exit(97, NULL, 0);
-
-	file_in = open(argv[1], O_RDONLY);
-	if (file_in == -1)
-		__exit(98, argv[1], 0);
-
-	file_out = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (file_out == -1)
-		__exit(99, argv[2], 0);
-
-	while ((r_stat = read(file_in, buffer, MAXSIZE)) != 0)
 	{
-		if (r_stat == -1)
-			__exit(98, argv[1], 0);
-
-		/*copy and write contents to file_out*/
-		w_stat = write(file_out, buffer, r_stat);
-		if (w_stat == -1)
-			__exit(99, argv[2], 0);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 
-	close_in = close(file_in); /* close file_in */
-	if (close_in == -1)
-		__exit(100, NULL, file_in);
+	fd_from = open(args[1], O_RDONLY);
 
-	close_out = close(file_out); /*close file_out*/
-	if (close_out == -1)
-		__exit(100, NULL, file_out);
+	if (fd_from < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", args[1]);
+		exit(98);
+	}
+
+	fd_to = open(args[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
+
+	if (fd_to < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", args[2]);
+		exit(99);
+	}
+	while ((readBytes = read(fd_from, buffer, 1024)) > 0)
+	{
+		writtenBytes = write(fd_to, buffer, readBytes);
+		write_error_check(writtenBytes, args, fd_from);
+	}
+
+	read_error_check(readBytes, args);
+	close_error_check(fd_from);
+	close_error_check(fd_to);
 
 	return (0);
 }
+
+/**
+ * write_error_check - checks write errors
+ * @writtenbytes: bytes written
+ * @args: command line args
+ * @fd_from: file descriptor for file to copy from
+ *
+ * Return: void
+*/
+void write_error_check(int writtenbytes, char *args[], int fd_from)
+{
+	if (writtenbytes < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", args[2]);
+		close_error_check(fd_from);
+		exit(99);
+	}
+}
+
+/**
+ * read_error_check - checks read errors
+ * @readbytes: bytes read
+ * @args: command line args
+ *
+ * Return: void
+*/
+void read_error_check(int readbytes, char *args[])
+{
+	if (readbytes < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", args[1]);
+		exit(98);
+	}
+}
+
+/**
+ * close_error_check - checks close errors
+ * @fd: file descriptor
+ *
+ * Return: void
+*/
+void close_error_check(int fd)
+{
+	if (close(fd) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
