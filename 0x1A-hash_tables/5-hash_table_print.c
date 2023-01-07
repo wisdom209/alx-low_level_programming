@@ -8,13 +8,11 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	int size = ht->size, i = 0, first_hit = 0;
+	int size, i, first_hit;
 
 	if (ht == NULL)
-	{
-		printf("{}\n");
 		return;
-	}
+	size = ht->size, i = 0, first_hit = 0;
 	printf("{");
 	for (i = 0; i < size; i++)
 	{
